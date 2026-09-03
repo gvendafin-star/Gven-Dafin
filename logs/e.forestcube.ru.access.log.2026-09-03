@@ -1,0 +1,3 @@
+44.214.139.176 - - [03/Sep/2026:07:01:34 +0300] "GET / HTTP/1.0" 403 4897 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+74.7.241.62 - - [03/Sep/2026:07:30:13 +0300] "GET / HTTP/1.0" 403 4897 "-" "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.4; +https://openai.com/gptbot)"
+74.7.244.3 - - [03/Sep/2026:07:30:13 +0300] "GET /robots.txt HTTP/1.0" 404 208 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; robots.txt; +https://openai.com/searchbot"

@@ -1,0 +1,812 @@
+/* ============================================================
+   ПАНЕЛЬ ПРОДАВЦА (seller.html) - ВЫНЕСЕННЫЙ CSS
+   ============================================================ */
+
+/* ДОПОЛНИТЕЛЬНЫЙ СТИЛЬ ДЛЯ ПЕЧАТИ */
+@media print {
+    .seller-panel,
+    .seller-header,
+    .seller-grid,
+    .seller-catalog,
+    .seller-cart,
+    .seller-back,
+    .modal-overlay,
+    .cart-actions,
+    .back-link,
+    .btn,
+    .btn-logout,
+    .btn-stocks,
+    .btn-orders,
+    .info-note,
+    .powered,
+    .auth-panel,
+    .wood-calc,
+    .hero,
+    .table-wrapper,
+    .grand-total,
+    .buttons-container,
+    .delivery-section,
+    .share-links {
+        display: none !important;
+    }
+    .print-invoice {
+        display: block !important;
+    }
+}
+
+/* СТИЛИ ДЛЯ ФОРМЫ КЛИЕНТА */
+.client-form {
+    background: #f8f5ed;
+    border: 1px solid #e2dccd;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.client-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.client-form .form-group {
+    margin-bottom: 10px;
+}
+.client-form .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #3c2a1f;
+    margin-bottom: 3px;
+}
+.client-form .form-group input,
+.client-form .form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+    background: white;
+}
+.client-form .form-group input:focus,
+.client-form .form-group textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+    background: #fffef5;
+}
+.client-form .form-group textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+/* СТИЛИ ДЛЯ ФЛАЖКОВ */
+.options-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 12px 0;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e2dccd;
+}
+.options-row .option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+.options-row .option input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #5a4a32;
+}
+.options-row .option label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3c2a1f;
+    cursor: pointer;
+}
+.options-row .delivery-cost-input {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+}
+.options-row .delivery-cost-input.show {
+    display: flex;
+}
+.options-row .delivery-cost-input input {
+    width: 100px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+    text-align: center;
+}
+.options-row .delivery-cost-input input:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+.options-row .delivery-cost-input span {
+    font-size: 0.8rem;
+    color: #6b5f4a;
+    font-weight: 500;
+}
+
+/* ========== КАТАЛОГ ========== */
+.seller-product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ede3d2;
+    cursor: pointer;
+    transition: 0.2s;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.seller-product-row:hover {
+    background: #f5f0e5;
+    margin: 0 -8px;
+    padding: 10px 8px;
+    border-radius: 8px;
+}
+.seller-product-row .product-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    flex: 1;
+}
+.seller-product-row .product-info .size {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #1a1a1a;
+    min-width: 70px;
+}
+.seller-product-row .product-info .size .length {
+    color: #6b5f4a;
+    font-weight: 400;
+}
+.seller-product-row .product-info .price {
+    font-weight: 700;
+    color: #0d470d;
+    font-size: 0.85rem;
+    min-width: 60px;
+}
+.seller-product-row .product-info .qty-in-cube {
+    font-size: 0.7rem;
+    color: #6b5f4a;
+    background: #ede3d2;
+    padding: 1px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.seller-product-row .product-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.seller-product-row .product-actions .stock {
+    font-size: 0.7rem;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+.seller-product-row .product-actions .stock.ok {
+    color: #2e7d32;
+    background: #e8f5e9;
+}
+.seller-product-row .product-actions .stock.warning {
+    color: #e65100;
+    background: #fff3e0;
+}
+.seller-product-row .product-actions .stock.error {
+    color: #c62828;
+    background: #ffebee;
+}
+.seller-product-row .product-actions .stock.preorder {
+    color: #0d47a1;
+    background: #e3f2fd;
+}
+.seller-product-row .product-actions .qty-input {
+    width: 45px;
+    padding: 4px 4px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    text-align: center;
+    font-size: 0.8rem;
+    background: white;
+    cursor: text;
+}
+.seller-product-row .product-actions .qty-input:focus {
+    outline: none;
+    border-color: #b8860b;
+    background: #fffef5;
+}
+.seller-product-row .in-cart-badge {
+    font-size: 0.65rem;
+    color: #1f5e1f;
+    background: #e8f5e9;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ========== КОРЗИНА ========== */
+.seller-cart {
+    background: #f8f5ed;
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #e2dccd;
+}
+.seller-cart h2 {
+    font-size: 1rem;
+    color: #3c2a1f;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2dccd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.seller-cart h2 .count {
+    font-size: 0.8rem;
+    color: #8a7b64;
+    font-weight: 400;
+}
+.seller-cart .cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+}
+.seller-cart .cart-items::-webkit-scrollbar {
+    width: 6px;
+}
+.seller-cart .cart-items::-webkit-scrollbar-thumb {
+    background: #d9ceb5;
+    border-radius: 10px;
+}
+.seller-cart .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ede3d2;
+}
+.seller-cart .cart-item .info {
+    flex: 1;
+}
+.seller-cart .cart-item .info .name {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.seller-cart .cart-item .info .detail {
+    font-size: 0.7rem;
+    color: #8a7b64;
+}
+.seller-cart .cart-item .qty-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.seller-cart .cart-item .qty-control button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #e2dccd;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+.seller-cart .cart-item .qty-control button:hover {
+    background: #d4c9b2;
+}
+.seller-cart .cart-item .qty-control button.danger {
+    color: #c62828;
+}
+.seller-cart .cart-item .qty-control .qty {
+    font-weight: 700;
+    font-size: 0.9rem;
+    min-width: 30px;
+    text-align: center;
+}
+.seller-cart .cart-item .item-sum {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #1f5e1f;
+    min-width: 70px;
+    text-align: right;
+}
+.seller-cart .cart-empty {
+    text-align: center;
+    color: #a6977c;
+    padding: 30px 0;
+}
+.seller-cart .cart-empty .icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+.seller-cart .cart-total {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 8px;
+}
+.seller-cart .cart-total .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 0.85rem;
+}
+.seller-cart .cart-total .row.total {
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-top: 2px solid #e2dccd;
+    padding-top: 8px;
+    margin-top: 4px;
+    color: #1f5e1f;
+}
+.seller-cart .cart-actions .btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    flex: 1;
+}
+.seller-cart .cart-actions .btn:active {
+    transform: scale(0.96);
+}
+.seller-cart .cart-actions .btn-primary {
+    background: #2c6e2c;
+    color: white;
+}
+.seller-cart .cart-actions .btn-primary:hover {
+    background: #1f5e1f;
+}
+.seller-cart .cart-actions .btn-danger {
+    background: #c62828;
+    color: white;
+}
+.seller-cart .cart-actions .btn-danger:hover {
+    background: #b71c1c;
+}
+.seller-cart .cart-actions .btn-secondary {
+    background: #5a4a32;
+    color: white;
+}
+.seller-cart .cart-actions .btn-secondary:hover {
+    background: #8b6946;
+}
+.seller-back {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: #5a4a32;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+.seller-back:hover {
+    background: #8b6946;
+    transform: scale(1.02);
+}
+
+/* ========== ОБЩИЕ СТИЛИ ДЛЯ ПАНЕЛИ ========== */
+.seller-panel {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fffef7;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e2dccd;
+}
+.seller-header {
+    background: #2f2e2a;
+    padding: 16px 24px;
+    color: #fef3d6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.seller-header h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+.seller-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.seller-header .user-info .badge {
+    background: #4a4a3e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    color: #aaffaa;
+    font-size: 0.8rem;
+}
+.seller-header .user-info .btn {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+.seller-header .user-info .btn-stocks {
+    background: #2c6e2c;
+    color: white;
+}
+.seller-header .user-info .btn-stocks:hover {
+    background: #1f5e1f;
+    transform: scale(1.02);
+}
+.seller-header .user-info .btn-logout {
+    background: #8b0000;
+    color: white;
+}
+.seller-header .user-info .btn-logout:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+.seller-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+    padding: 20px 24px;
+}
+@media (max-width: 1024px) {
+    .seller-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.seller-catalog {
+    background: #fffef7;
+    border-radius: 12px;
+    padding: 0;
+}
+.seller-catalog h2 {
+    font-size: 1rem;
+    color: #3c2a1f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2dccd;
+}
+
+.seller-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+.seller-tabs .tab {
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 2px solid #e2dccd;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+    color: #4a3b28;
+}
+.seller-tabs .tab:hover {
+    background: #f0ebdf;
+    border-color: #c0b59a;
+}
+.seller-tabs .tab.active {
+    background: #5a4a32;
+    color: white;
+    border-color: #5a4a32;
+}
+.seller-tabs .tab .badge {
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    padding: 0 8px;
+    font-size: 0.65rem;
+    margin-left: 4px;
+}
+.seller-tabs .tab.active .badge {
+    background: rgba(255,255,255,0.2);
+    color: #fef3d6;
+}
+
+.seller-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 14px;
+    max-height: 650px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+.seller-products::-webkit-scrollbar {
+    width: 6px;
+}
+.seller-products::-webkit-scrollbar-track {
+    background: #f8f5ed;
+    border-radius: 10px;
+}
+.seller-products::-webkit-scrollbar-thumb {
+    background: #d9ceb5;
+    border-radius: 10px;
+}
+
+.seller-product-group {
+    background: #faf8f2;
+    border: 1px solid #e2dccd;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: all 0.2s ease;
+}
+.seller-product-group:hover {
+    background: #f5f0e5;
+    border-color: #c0b59a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.seller-product-group .group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2dccd;
+}
+.seller-product-group .group-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #2c3a1f;
+}
+.seller-product-group .group-total {
+    font-size: 0.7rem;
+    color: #6b5f4a;
+    background: #ede3d2;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+.seller-product-group .group-total.ok {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+.seller-product-group .group-total.warning {
+    background: #fff3e0;
+    color: #e65100;
+}
+.seller-product-group .group-total.empty {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+    background: none;
+    border: none;
+}
+.modal-close:hover {
+    color: #333;
+}
+.modal-content h3 {
+    color: #3c2a1f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2dccd;
+}
+.modal-content .field {
+    margin-bottom: 12px;
+}
+.modal-content .field label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #4a3b28;
+    margin-bottom: 4px;
+}
+.modal-content .field input,
+.modal-content .field textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+}
+.modal-content .field input:focus,
+.modal-content .field textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+@media (max-width: 768px) {
+    .seller-products {
+        grid-template-columns: 1fr;
+        max-height: 450px;
+    }
+    .seller-product-group {
+        padding: 12px;
+    }
+    .seller-product-row {
+        font-size: 0.75rem;
+        gap: 4px;
+    }
+    .seller-product-row .size {
+        min-width: 55px;
+        font-size: 0.7rem;
+    }
+    .seller-product-row .price {
+        font-size: 0.7rem;
+        min-width: 50px;
+    }
+    .seller-product-row .stock {
+        font-size: 0.6rem;
+        min-width: 45px;
+        padding: 1px 6px;
+    }
+    .seller-product-row .qty-input {
+        width: 40px;
+        font-size: 0.7rem;
+    }
+    .seller-tabs .tab {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .seller-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .seller-header .user-info {
+        justify-content: center;
+    }
+    .seller-grid {
+        padding: 12px;
+    }
+    .seller-cart {
+        padding: 12px;
+    }
+    .client-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    .options-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .options-row .delivery-cost-input {
+        margin-left: 0;
+    }
+}
+
+/* ============================================================
+   АДАПТАЦИЯ ДЛЯ ПДА (телефонов) — СТРОГО 3 СТРОКИ
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Шапка: кнопки в ряд */
+    .seller-header .user-info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .seller-header .user-info .btn {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+
+    /* Блок настроек — превращаем в 3 чёткие строки */
+    .seller-panel > div:first-of-type {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        padding: 12px 16px !important;
+    }
+
+    /* Строка 1: Цена за куб */
+    .seller-panel > div:first-of-type > span:nth-of-type(1),
+    .seller-panel > div:first-of-type > span:nth-of-type(2) {
+        display: inline-block;
+        font-size: 0.8rem !important;
+    }
+
+    .seller-panel > div:first-of-type > #cubePriceInput {
+        width: 80px !important;
+        max-width: 80px !important;
+        font-size: 0.85rem !important;
+        padding: 4px 6px !important;
+        display: inline-block;
+    }
+
+    .seller-panel > div:first-of-type > .btn-reset:first-of-type {
+        padding: 4px 12px !important;
+        font-size: 0.65rem !important;
+        display: inline-block;
+    }
+
+    /* Строка 2: Погрузка */
+    .seller-panel > div:first-of-type > span:nth-of-type(3),
+    .seller-panel > div:first-of-type > span:nth-of-type(4) {
+        display: inline-block;
+        font-size: 0.8rem !important;
+    }
+
+    .seller-panel > div:first-of-type > #loadingPriceInput {
+        width: 80px !important;
+        max-width: 80px !important;
+        font-size: 0.85rem !important;
+        padding: 4px 6px !important;
+        display: inline-block;
+    }
+
+    .seller-panel > div:first-of-type > .btn-reset:last-of-type {
+        padding: 4px 12px !important;
+        font-size: 0.65rem !important;
+        display: inline-block;
+    }
+
+    /* Строка 3: Кнопка "Новая сделка" — отдельная, крупная, на всю ширину */
+    .seller-panel > div:first-of-type > button[onclick*="newDeal"] {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 1rem !important;
+        background: #1565c0 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 30px !important;
+        margin-top: 4px !important;
+    }
+
+    /* Скрываем лишние span (статус цены) на телефоне, чтобы не мешал */
+    #cubePriceStatus {
+        display: none !important;
+    }
+}

@@ -1,0 +1,186 @@
+/* ============================================================
+   КАССА (cashier.html) - ВЫНЕСЕННЫЙ CSS
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
+body { background: #eef2e6; padding: 20px; }
+.cashier-panel {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fffef7;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid #e2dccd;
+}
+h1 { color: #2f2e2a; margin-bottom: 20px; font-size: 1.4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.header-actions { display: flex; gap: 10px; }
+
+.block {
+    background: #f8f5ed;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e2dccd;
+}
+.block h2 { font-size: 1.1rem; color: #3c2a1f; margin-bottom: 12px; border-bottom: 2px solid #e2dccd; padding-bottom: 8px; }
+
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin-bottom: 12px; }
+.form-group { flex: 1; min-width: 120px; }
+.form-group label { display: block; font-weight: 600; font-size: 0.8rem; color: #3c2a1f; margin-bottom: 4px; }
+.form-group input { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1px solid #d9ceb5; font-size: 1rem; background: white; }
+.form-group input:focus { outline: none; border-color: #b8860b; }
+.form-group textarea { width: 100%; padding: 10px 14px; border-radius: 10px; border: 1px solid #d9ceb5; font-size: 1rem; background: white; resize: vertical; min-height: 60px; }
+.form-group textarea:focus { outline: none; border-color: #b8860b; }
+
+.btn { border: none; padding: 10px 24px; border-radius: 30px; font-weight: 700; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
+.btn:active { transform: scale(0.95); }
+.btn-primary { background: #2c6e2c; color: white; }
+.btn-primary:hover { background: #1f5e1f; transform: scale(1.02); }
+.btn-danger { background: #c62828; color: white; }
+.btn-danger:hover { background: #b71c1c; }
+.btn-warning { background: #f57c00; color: white; }
+.btn-warning:hover { background: #e65100; }
+.btn-back { background: #5a4a32; color: white; text-decoration: none; display: inline-block; }
+.btn-back:hover { background: #8b6946; }
+.btn:disabled { background: #aaa; cursor: not-allowed; }
+
+.cash-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+.cash-item {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    text-align: center;
+}
+.cash-item .nominal { font-weight: 700; font-size: 0.9rem; color: #2c3a1f; }
+.cash-item input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #d9ceb5;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 4px;
+    background: white;
+    outline: none;
+}
+.cash-item input:focus { outline: none; border-color: #b8860b; }
+.cash-item .total { font-weight: 600; color: #1f5e1f; margin-top: 4px; font-size: 0.85rem; }
+
+.summary-block {
+    background: #e9e0cf;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 16px;
+}
+.summary-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.95rem; border-bottom: 1px solid #d4c9b2; }
+.summary-row:last-child { border-bottom: none; }
+.summary-row .label { font-weight: 500; color: #3c2a1f; }
+.summary-row .value { font-weight: 700; }
+.summary-row .value.green { color: #2e7d32; }
+.summary-row .value.red { color: #c62828; }
+.summary-row.total { font-size: 1.2rem; border-top: 2px solid #5a4a32; padding-top: 10px; margin-top: 6px; }
+
+/* ===== ИСТОРИЯ ОПЕРАЦИЙ (ТАБЛИЦА) ===== */
+.history-table-wrapper {
+    overflow-x: auto;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1px solid #e2dccd;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 550px;
+    background: white;
+}
+
+.history-table th {
+    background: #e9e0cf;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #3c2a1f;
+    border-bottom: 2px solid #d4c9b2;
+    white-space: nowrap;
+}
+
+.history-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ede3d2;
+    vertical-align: middle;
+}
+
+.history-table tr:hover td {
+    background: #f8f5ed;
+}
+
+.history-table .col-time {
+    color: #8a7b64;
+    white-space: nowrap;
+    font-size: 0.75rem;
+}
+
+.history-table .col-tn {
+    font-weight: 600;
+    color: #2c3a1f;
+}
+
+.history-table .col-amount {
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.history-table .col-amount.green {
+    color: #2e7d32;
+}
+
+.history-table .col-amount.red {
+    color: #c62828;
+}
+
+.history-table .col-comment {
+    color: #6b5f4a;
+    font-size: 0.8rem;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-table .empty-row td {
+    text-align: center;
+    color: #a6977c;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Адаптив для маленьких экранов */
+@media (max-width: 600px) {
+    .cashier-panel { padding: 16px; }
+    .cash-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); }
+    .row { flex-direction: column; }
+    .header-actions { flex-direction: column; width: 100%; }
+    .header-actions .btn { width: 100%; text-align: center; }
+    .history-table {
+        font-size: 0.75rem;
+        min-width: 400px;
+    }
+    .history-table th,
+    .history-table td {
+        padding: 6px 8px;
+    }
+    .history-table .col-comment {
+        max-width: 100px;
+    }
+}

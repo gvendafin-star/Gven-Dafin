@@ -1,0 +1,768 @@
+/* ============================================================
+   ПРИХОД ТОВАРА (income.html) - СТРОГО ПОД ТВОЙ HTML
+   ============================================================ */
+
+/* Основной контейнер */
+.income-panel {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fffef7;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e2dccd;
+    padding: 24px;
+}
+
+/* Шапка страницы */
+.income-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2dccd;
+}
+
+.income-header h1 {
+    font-size: 1.2rem;
+    color: #2f2e2a;
+}
+
+.income-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.income-header .user-info .badge {
+    background: #4a4a3e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    color: #aaffaa;
+    font-size: 0.8rem;
+}
+
+.btn-back {
+    background: #5a4a32;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+.btn-back:hover {
+    background: #8b6946;
+    transform: scale(1.02);
+}
+
+.btn-logout {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.btn-logout:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+/* ============================================================
+   ФОРМА ПРИХОДА (ТОЧНО ПОД ТВОЙ HTML)
+   ============================================================ */
+
+/* Главная оболочка формы */
+.income-form-new {
+    background: #f8f5ed;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Заголовок формы + статус (выравнивание через flex) */
+.income-form-new .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* Поля формы */
+.income-form-new .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.income-form-new .form-group {
+    margin-bottom: 14px;
+}
+
+.income-form-new .form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #3c2a1f;
+    margin-bottom: 4px;
+}
+
+.income-form-new .form-group input,
+.income-form-new .form-group select,
+.income-form-new .form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.income-form-new .form-group input:focus,
+.income-form-new .form-group select:focus,
+.income-form-new .form-group textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+    background: #fffef5;
+}
+
+.income-form-new .form-group textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+/* ===== ДОБАВЛЕНИЕ ПОЗИЦИИ ===== */
+.income-add-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.income-add-row select {
+    flex: 2;
+    min-width: 200px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+}
+
+.income-add-row input[type="number"] {
+    width: 100px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.income-add-row .btn-add-item {
+    background: #2c6e2c;
+    color: white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.income-add-row .btn-add-item:hover {
+    background: #1f5e1f;
+    transform: scale(1.02);
+}
+
+.income-add-row .btn-add-item:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* ===== ТАБЛИЦА ПОЗИЦИЙ ===== */
+.income-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.85rem;
+}
+
+.income-items-table th {
+    background: #e9e0cf;
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 2px solid #d4c9b2;
+    font-size: 0.75rem;
+}
+
+.income-items-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ede3d2;
+    vertical-align: middle;
+}
+
+.income-items-table .item-num {
+    width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #6b5f4a;
+}
+
+.income-items-table .item-name {
+    font-weight: 500;
+}
+
+.income-items-table .item-qty {
+    text-align: center;
+    font-weight: 600;
+}
+
+.income-items-table .item-volume {
+    text-align: center;
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.income-items-table .btn-remove-item {
+    background: #c62828;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.income-items-table .btn-remove-item:hover {
+    background: #b71c1c;
+    transform: scale(1.1);
+}
+
+.income-items-empty {
+    text-align: center;
+    padding: 20px;
+    color: #a6977c;
+}
+
+/* ===== ИТОГО ===== */
+.income-total-block {
+    background: #e9e0cf;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.income-total-block .total-value {
+    color: #1f5e1f;
+    font-size: 1.4rem;
+    background: white;
+    padding: 4px 20px;
+    border-radius: 30px;
+}
+
+/* ===== КНОПКИ ДЕЙСТВИЙ ===== */
+.income-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.income-actions .btn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.income-actions .btn-new {
+    background: #1976d2;
+    color: white;
+}
+.income-actions .btn-new:hover {
+    background: #1565c0;
+}
+
+.income-actions .btn-save {
+    background: #2c6e2c;
+    color: white;
+}
+.income-actions .btn-save:hover {
+    background: #1f5e1f;
+}
+
+.income-actions .btn-cancel {
+    background: #5a4a32;
+    color: white;
+}
+.income-actions .btn-cancel:hover {
+    background: #8b6946;
+}
+
+.income-actions .btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   ИСТОРИЯ ПРИХОДОВ
+   ============================================================ */
+
+.income-history {
+    margin-top: 20px;
+}
+
+.income-history h3 {
+    color: #3c2a1f;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2dccd;
+}
+
+.income-history table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.income-history th {
+    text-align: left;
+    padding: 8px 6px;
+    background: #faf7ef;
+    color: #4a3b28;
+    font-weight: 700;
+    border-bottom: 2px solid #e2d5bf;
+    font-size: 0.7rem;
+}
+
+.income-history td {
+    padding: 6px;
+    border-bottom: 1px solid #eee7db;
+    font-size: 0.8rem;
+}
+
+.income-history .empty {
+    text-align: center;
+    color: #a6977c;
+    padding: 20px;
+}
+
+.income-history .badge-income {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* ===== TOAST ===== */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2e7d32;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: none;
+    max-width: 90%;
+}
+.toast.error {
+    background: #c62828;
+}
+
+/* ============================================================
+   АДАПТИВ (ДЛЯ ТЕЛЕФОНОВ И ПЛАНШЕТОВ)
+   ============================================================ */
+
+@media (max-width: 600px) {
+    .income-panel {
+        padding: 12px;
+        margin: 10px;
+    }
+    .income-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .income-form-new .form-row {
+        grid-template-columns: 1fr;
+    }
+    .income-add-row {
+        flex-direction: column;
+    }
+    .income-add-row select,
+    .income-add-row input {
+        width: 100% !important;
+    }
+    .income-items-table {
+        font-size: 0.75rem;
+    }
+    .income-items-table th,
+    .income-items-table td {
+        padding: 4px 6px;
+    }
+    .income-total-block {
+        font-size: 0.85rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    .income-total-block .total-value {
+        font-size: 1.1rem;
+        padding: 4px 12px;
+    }
+    .income-actions {
+        flex-direction: column;
+    }
+    .income-actions .btn {
+        width: 100%;
+    }
+    .income-history table {
+        font-size: 0.7rem;
+    }
+    .income-history th,
+    .income-history td {
+        padding: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .income-panel {
+        padding: 12px !important;
+        margin: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    .income-header {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 8px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .income-header h1 {
+        font-size: 1rem !important;
+    }
+
+    .income-header .user-info {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+
+    .income-header .user-info .btn {
+        padding: 6px 14px !important;
+        font-size: 0.7rem !important;
+    }
+
+    /* ФОРМА */
+    .income-form-new {
+        padding: 12px !important;
+    }
+
+    .income-form-new .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+    }
+
+    .income-form-new .form-group input,
+    .income-form-new .form-group select {
+        font-size: 1rem !important;
+        padding: 10px 12px !important;
+        height: 44px !important;
+    }
+
+    .income-form-new .form-group textarea {
+        font-size: 1rem !important;
+        padding: 10px 12px !important;
+    }
+
+    /* ДОБАВЛЕНИЕ ПОЗИЦИИ */
+    .income-add-row {
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .income-add-row select {
+        width: 100% !important;
+        min-width: unset !important;
+        height: 44px !important;
+        font-size: 1rem !important;
+    }
+
+    .income-add-row input[type="number"] {
+        width: 100% !important;
+        height: 44px !important;
+        font-size: 1rem !important;
+    }
+
+    .income-add-row .btn-add-item {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 0.95rem !important;
+        height: 48px !important;
+    }
+
+    /* ТАБЛИЦА ПОЗИЦИЙ */
+    .income-items-table {
+        font-size: 0.75rem !important;
+    }
+
+    .income-items-table th,
+    .income-items-table td {
+        padding: 6px 4px !important;
+    }
+
+    .income-items-table .item-num {
+        width: 30px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .income-items-table .item-name {
+        font-size: 0.75rem !important;
+        word-break: break-word !important;
+    }
+
+    .income-items-table .item-qty {
+        font-size: 0.8rem !important;
+        min-width: 35px !important;
+    }
+
+    .income-items-table .item-volume {
+        font-size: 0.75rem !important;
+        min-width: 55px !important;
+    }
+
+    .income-items-table .btn-remove-item {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.8rem !important;
+        min-width: 32px !important;
+    }
+
+    /* ИТОГО */
+    .income-total-block {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 12px !important;
+        gap: 6px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .income-total-block .total-value {
+        font-size: 1.3rem !important;
+        padding: 4px 16px !important;
+    }
+
+    /* КНОПКИ ДЕЙСТВИЙ */
+    .income-actions {
+        flex-direction: column !important;
+        gap: 6px !important;
+    }
+
+    .income-actions .btn {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+        min-height: 48px !important;
+    }
+
+    .income-history h3 {
+        font-size: 0.9rem !important;
+        padding-bottom: 6px !important;
+    }
+
+    .income-history table {
+        font-size: 0.65rem !important;
+        min-width: 100% !important;
+    }
+
+    .income-history th {
+        font-size: 0.6rem !important;
+        padding: 6px 4px !important;
+        white-space: nowrap !important;
+    }
+
+    .income-history td {
+        padding: 6px 4px !important;
+        font-size: 0.7rem !important;
+        word-break: break-word !important;
+    }
+
+    .income-history .mobile-card {
+        display: block !important;
+        background: #f8f5ed !important;
+        border-radius: 10px !important;
+        padding: 12px !important;
+        margin-bottom: 8px !important;
+        border: 1px solid #e2dccd !important;
+    }
+
+    .income-history .mobile-card .row {
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 4px 0 !important;
+        font-size: 0.8rem !important;
+    }
+
+    .income-history .mobile-card .row .label {
+        color: #6b5f4a !important;
+        font-weight: 500 !important;
+    }
+
+    .income-history .mobile-card .row .value {
+        font-weight: 600 !important;
+    }
+
+    .income-history .mobile-card .row .value.volume {
+        color: #1f5e1f !important;
+    }
+
+    .income-history .mobile-card .actions {
+        display: flex !important;
+        gap: 6px !important;
+        margin-top: 8px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+
+    .income-history .mobile-card .actions .btn {
+        flex: 1 !important;
+        min-width: 60px !important;
+        padding: 6px 12px !important;
+        font-size: 0.7rem !important;
+        border-radius: 20px !important;
+        border: none !important;
+        cursor: pointer !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+    }
+
+    .income-history .mobile-card .actions .btn-view {
+        background: #1976d2 !important;
+        color: white !important;
+    }
+
+    .income-history .mobile-card .actions .btn-edit {
+        background: #f57c00 !important;
+        color: white !important;
+    }
+
+    .income-history .mobile-card .actions .btn-delete {
+        background: #c62828 !important;
+        color: white !important;
+    }
+
+    .income-history table {
+        display: none !important;
+    }
+
+    .income-history .mobile-cards-container {
+        display: block !important;
+    }
+
+    .toast {
+        font-size: 0.85rem !important;
+        padding: 10px 20px !important;
+        bottom: 16px !important;
+        width: 90% !important;
+        max-width: 400px !important;
+        border-radius: 20px !important;
+    }
+}
+
+/* Скрываем мобильные карточки на десктопе */
+.income-history .mobile-cards-container {
+    display: none;
+}
+
+/* Дополнительные улучшения для маленьких экранов */
+@media (max-width: 480px) {
+    .income-panel {
+        padding: 8px !important;
+        margin: 4px !important;
+    }
+    .income-form-new {
+        padding: 8px !important;
+    }
+    .income-header h1 {
+        font-size: 0.9rem !important;
+    }
+    .income-header .user-info .badge {
+        font-size: 0.65rem !important;
+        padding: 2px 10px !important;
+    }
+    .income-form-new .form-group input,
+    .income-form-new .form-group select {
+        height: 40px !important;
+        font-size: 0.9rem !important;
+        padding: 6px 10px !important;
+    }
+    .income-items-table {
+        font-size: 0.65rem !important;
+    }
+    .income-items-table th,
+    .income-items-table td {
+        padding: 4px 2px !important;
+    }
+    .income-items-table .item-name {
+        font-size: 0.65rem !important;
+    }
+    .income-items-table .btn-remove-item {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.7rem !important;
+        min-width: 28px !important;
+    }
+    .income-total-block {
+        font-size: 0.75rem !important;
+        padding: 8px !important;
+    }
+    .income-total-block .total-value {
+        font-size: 1.1rem !important;
+        padding: 2px 12px !important;
+    }
+    .income-history .mobile-card {
+        padding: 8px !important;
+    }
+    .income-history .mobile-card .row {
+        font-size: 0.7rem !important;
+        padding: 3px 0 !important;
+    }
+    .income-history .mobile-card .actions .btn {
+        font-size: 0.6rem !important;
+        padding: 4px 8px !important;
+        min-width: 50px !important;
+    }
+}

@@ -1,0 +1,112 @@
+/* ============================================================
+   СКЛАД / УПРАВЛЕНИЕ ОСТАТКАМИ (stocks.php) - СТИЛИ
+   ============================================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
+body { background: #eef2e6; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; background: white; border-radius: 16px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+h1 { color: #2f2e2a; margin-bottom: 20px; }
+
+/* ===== БЛОК ОБЩЕЙ КУБАТУРЫ ===== */
+.total-cube-block {
+    background: #e9e0cf;
+    padding: 14px 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.total-cube-block .cube-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1f5e1f;
+    background: white;
+    padding: 4px 20px;
+    border-radius: 30px;
+}
+
+.total-cube-block .sum-display {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #aaffaa;
+}
+
+.total-cube-block .price-input {
+    width: 120px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #d9ceb5;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    background: white;
+}
+
+.total-cube-block .price-input:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+
+.total-cube-block .sum-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #1f5e1f;
+    padding: 8px 24px;
+    border-radius: 30px;
+}
+
+.total-cube-block .sum-block .label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* ===== КНОПКИ ===== */
+.btn-group { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+.btn { background: #5a4a32; color: white; border: none; padding: 8px 20px; border-radius: 30px; cursor: pointer; font-weight: 600; transition: 0.2s; text-decoration: none; display: inline-block; }
+.btn:hover { background: #8b6946; transform: scale(1.02); }
+.btn-save { background: #2c6e2c; }
+.btn-save:hover { background: #1f5e1f; }
+
+/* ===== ТАБЛИЦА ===== */
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th { background: #f8f5ed; padding: 10px 8px; text-align: left; border-bottom: 2px solid #e2dccd; }
+td { padding: 8px; border-bottom: 1px solid #eee7db; }
+input[type="number"] { width: 100px; padding: 4px 6px; border-radius: 8px; border: 1px solid #d9ceb5; }
+input[type="number"]:focus { outline: none; border-color: #b8860b; }
+
+/* ===== СТАТУСЫ ОСТАТКОВ ===== */
+.available.positive { color: #2e7d32; font-weight: 700; }
+.available.negative { color: #c62828; font-weight: 700; }
+.available.zero { color: #6b5f4a; font-weight: 700; }
+
+.status { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.7rem; font-weight: 600; }
+.status-ok { background: #e8f5e9; color: #2e7d32; }
+.status-low { background: #fff3e0; color: #e65100; }
+.status-empty { background: #ffebee; color: #c62828; }
+.status-preorder { background: #e3f2fd; color: #0d47a1; }
+
+.volume-cell { color: #0d47a1; font-weight: 600; font-size: 0.85rem; }
+.cube-cell { color: #1f5e1f; font-weight: 700; font-size: 0.9rem; }
+.cube-cell.negative { color: #c62828; }
+
+/* ===== КНОПКИ НАВИГАЦИИ ===== */
+.back-link { display: inline-block; margin-top: 20px; padding: 10px 24px; background: #5a4a32; color: white; text-decoration: none; border-radius: 30px; font-weight: 600; font-size: 0.8rem; transition: 0.2s; }
+.back-link:hover { background: #8b6946; }
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 600px) {
+    table { font-size: 0.7rem; }
+    input[type="number"] { width: 70px; }
+    .container { padding: 12px; }
+    .total-cube-block { font-size: 0.9rem; flex-direction: column; text-align: center; padding: 12px 16px; }
+    .total-cube-block .cube-value { font-size: 1.3rem; }
+    .total-cube-block .price-input { width: 100px; }
+    .total-cube-block .sum-block { padding: 6px 16px; }
+    .total-cube-block .sum-display { font-size: 1.3rem; }
+}

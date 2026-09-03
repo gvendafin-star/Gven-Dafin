@@ -1,0 +1,668 @@
+/* ============================================================
+   ВСЕ ЗАЯВКИ (orders.html) - ВЫНЕСЕННЫЙ CSS
+   ============================================================ */
+
+.orders-panel {
+    max-width: 1400px;
+    margin: 20px auto;
+    background: #fffef7;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e2dccd;
+    padding: 20px 24px;
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2dccd;
+}
+
+.orders-header h1 {
+    font-size: 1.2rem;
+    color: #2f2e2a;
+}
+
+.orders-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.orders-header .user-info .badge {
+    background: #4a4a3e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    color: #aaffaa;
+    font-size: 0.8rem;
+}
+
+.orders-header .user-info .btn {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-back {
+    background: #5a4a32;
+    color: white;
+}
+.btn-back:hover {
+    background: #8b6946;
+    transform: scale(1.02);
+}
+
+.btn-logout {
+    background: #8b0000;
+    color: white;
+}
+.btn-logout:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #f8f5ed;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.filter-row label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #3c2a1f;
+}
+.filter-row input[type="date"] {
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.8rem;
+    background: white;
+}
+.filter-row input[type="date"]:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+.filter-row .btn-filter {
+    background: #2c6e2c;
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+.filter-row .btn-filter:hover {
+    background: #1f5e1f;
+    transform: scale(1.02);
+}
+.filter-row .btn-reset-filter {
+    background: #5a4a32;
+    color: white;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+.filter-row .btn-reset-filter:hover {
+    background: #8b6946;
+    transform: scale(1.02);
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stats-row .stat {
+    background: #f8f5ed;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stats-row .stat .number {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1f5e1f;
+}
+.stats-row .stat .number.blue {
+    color: #0d47a1;
+}
+.stats-row .stat .number.orange {
+    color: #e65100;
+}
+.stats-row .stat .number.purple {
+    color: #4a148c;
+}
+.stats-row .stat .number.red {
+    color: #c62828;
+}
+.stats-row .stat .label {
+    font-size: 0.7rem;
+    color: #6b5f4a;
+}
+.stats-row .stat .sub-label {
+    font-size: 0.6rem;
+    color: #8a7b64;
+    margin-top: 2px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    min-width: 900px;
+}
+
+.orders-table th {
+    text-align: left;
+    padding: 10px 8px;
+    background: #faf7ef;
+    color: #4a3b28;
+    font-weight: 700;
+    border-bottom: 2px solid #e2d5bf;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+.orders-table td {
+    padding: 8px;
+    border-bottom: 1px solid #eee7db;
+    vertical-align: middle;
+}
+
+.orders-table tr:hover td {
+    background: #f8f4ea;
+}
+
+.orders-table .order-number {
+    font-weight: 700;
+    color: #2c3a1f;
+    white-space: nowrap;
+}
+
+.orders-table .total {
+    font-weight: 700;
+    color: #1f5e1f;
+    white-space: nowrap;
+}
+
+.orders-table .volume {
+    font-weight: 600;
+    color: #0d47a1;
+    white-space: nowrap;
+}
+
+.orders-table .btn-action {
+    border: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.7rem;
+    transition: 0.2s;
+    margin: 2px;
+}
+.orders-table .btn-view {
+    background: #1976d2;
+    color: white;
+}
+.orders-table .btn-view:hover {
+    background: #1565c0;
+    transform: scale(1.05);
+}
+.orders-table .btn-print {
+    background: #d32f2f;
+    color: white;
+}
+.orders-table .btn-print:hover {
+    background: #b71c1c;
+    transform: scale(1.05);
+}
+.orders-table .btn-delete {
+    background: #c62828;
+    color: white;
+}
+.orders-table .btn-delete:hover {
+    background: #b71c1c;
+    transform: scale(1.05);
+}
+
+.orders-table .badge-status {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-status.delivery {
+    background: #e3f2fd;
+    color: #0d47a1;
+}
+.badge-status.card {
+    background: #fff3e0;
+    color: #e65100;
+}
+.badge-status.both {
+    background: #e8eaf6;
+    color: #283593;
+}
+.badge-status.none {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #a6977c;
+}
+.empty-state .icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #a6977c;
+}
+.loading .spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2dccd;
+    border-top: 4px solid #5a4a32;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* МОДАЛЬНОЕ ОКНО */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 550px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+    background: none;
+    border: none;
+}
+.modal-close:hover {
+    color: #333;
+}
+.modal-content h3 {
+    color: #3c2a1f;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2dccd;
+}
+.modal-content .detail-row {
+    padding: 6px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.modal-content .detail-row strong {
+    display: inline-block;
+    width: 140px;
+    color: #4a3b28;
+}
+.modal-content .items-list {
+    background: #f8f5ed;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.modal-content .btn-print-in-modal {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    margin-top: 12px;
+    width: 100%;
+}
+.modal-content .btn-print-in-modal:hover {
+    background: #b71c1c;
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .orders-panel {
+        padding: 12px;
+        margin: 10px;
+    }
+    .orders-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .orders-header .user-info {
+        justify-content: center;
+    }
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-row input[type="date"] {
+        width: 100%;
+    }
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .orders-table {
+        font-size: 0.7rem;
+        min-width: 600px;
+    }
+    .orders-table th,
+    .orders-table td {
+        padding: 5px 4px;
+    }
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-content .detail-row strong {
+        width: 100px;
+    }
+}
+
+/* ========== СТИЛИ ДЛЯ РЕДАКТИРОВАНИЯ ========== */
+.edit-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px dashed #ede3d2;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.edit-item-row .item-name {
+    font-weight: 600;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 150px;
+}
+.edit-item-row .item-qty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.edit-item-row .item-qty button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #e2dccd;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+.edit-item-row .item-qty button:hover {
+    background: #d4c9b2;
+}
+.edit-item-row .item-qty .qty-num {
+    font-weight: 700;
+    font-size: 1rem;
+    min-width: 30px;
+    text-align: center;
+}
+.edit-item-row .item-price {
+    font-weight: 600;
+    color: #1f5e1f;
+    min-width: 80px;
+    text-align: right;
+}
+
+.modal-content .btn-edit-save {
+    background: #2c6e2c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    margin-top: 12px;
+    width: 100%;
+}
+.modal-content .btn-edit-save:hover {
+    background: #1f5e1f;
+    transform: scale(1.02);
+}
+.modal-content .btn-edit-save:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+    transform: none;
+}
+.modal-content .edit-total {
+    background: #e9e0cf;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.modal-content .edit-total .sum {
+    color: #1f5e1f;
+}
+.modal-content .edit-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+.modal-content .edit-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #5a4a32;
+}
+.modal-content .edit-checkbox label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #3c2a1f;
+    cursor: pointer;
+}
+.modal-content .detail-row input,
+.modal-content .detail-row textarea {
+    width: calc(100% - 150px);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #d9ceb5;
+    font-size: 0.85rem;
+    font-family: inherit;
+}
+.modal-content .detail-row input:focus,
+.modal-content .detail-row textarea:focus {
+    outline: none;
+    border-color: #b8860b;
+}
+.modal-content .detail-row textarea {
+    vertical-align: top;
+    min-height: 40px;
+}
+.modal-content .detail-row strong {
+    display: inline-block;
+    width: 140px;
+    color: #4a3b28;
+}
+
+.orders-table .btn-edit {
+    background: #f57c00;
+    color: white;
+}
+.orders-table .btn-edit:hover {
+    background: #e65100;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .modal-content .detail-row strong {
+        width: 100px;
+    }
+    .modal-content .detail-row input,
+    .modal-content .detail-row textarea {
+        width: calc(100% - 110px);
+    }
+    .edit-item-row .item-name {
+        min-width: 100px;
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================================
+   СТАТУСЫ ЗАЯВОК
+   ============================================================ */
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 90px;
+    transition: all 0.2s ease;
+}
+
+/* Предзаказ - оранжевый */
+.status-preorder {
+    background: #fff3e0;
+    color: #e65100;
+    border: 2px solid #ffb74d;
+    box-shadow: 0 0 0 2px rgba(255, 183, 77, 0.2);
+}
+
+/* Отгружена - зелёный */
+.status-shipped {
+    background: #e8f5e9;
+    color: #1b5e20;
+    border: 2px solid #66bb6a;
+    box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.2);
+}
+
+/* Не оплачена - красный */
+.status-unpaid {
+    background: #c62828;
+    color: white;
+    border: 2px solid #b71c1c;
+    box-shadow: 0 0 0 2px rgba(198, 40, 40, 0.2);
+}
+
+/* Подсветка строк */
+.orders-table tr.status-preorder-row {
+    background: #fff8f0 !important;
+    border-left: 4px solid #ffb74d;
+}
+
+.orders-table tr.status-shipped-row {
+    background: #f5faf5 !important;
+    border-left: 4px solid #66bb6a;
+}
+
+.orders-table tr.status-unpaid-row {
+    background: #fdf0f0 !important;
+    border-left: 4px solid #c62828;
+}
+
+/* Анимация при наведении */
+.status-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .status-badge {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+        min-width: 65px;
+    }
+}
+
+/* ============================================================
+   ЦВЕТА ФАКТИЧЕСКОЙ ОТГРУЗКИ
+   ============================================================ */
+
+/* Ожидает отгрузки (по факту ещё не отгружена) */
+.orders-table tr.row-fact-pending {
+    background: #fff8f0 !important;
+    border-left: 4px solid #ef5350;
+}
+
+/* Отгружена по факту */
+.orders-table tr.row-fact-shipped {
+    background: #f0f8f0 !important;
+    border-left: 4px solid #66bb6a;
+}

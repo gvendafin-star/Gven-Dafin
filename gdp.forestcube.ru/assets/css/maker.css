@@ -1,0 +1,342 @@
+/* ============================================================
+   МЕЙКЕР (maker.html) - СТИЛИ
+   ============================================================ */
+
+.maker-panel {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fffef7;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e2dccd;
+    padding: 20px 24px;
+}
+
+.maker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2dccd;
+}
+
+.maker-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.maker-title h1 {
+    font-size: 1.4rem;
+    color: #2f2e2a;
+    margin: 0;
+}
+
+.maker-title .badge {
+    background: #4a4a3e;
+    padding: 4px 14px;
+    border-radius: 20px;
+    color: #aaffaa;
+    font-size: 0.8rem;
+}
+
+.maker-stats {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.maker-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.maker-stats .stat-label {
+    font-size: 0.7rem;
+    color: #6b5f4a;
+}
+
+.maker-stats .stat-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f5e1f;
+}
+
+.maker-stats .btn-back {
+    background: #5a4a32;
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+
+.maker-stats .btn-back:hover {
+    background: #8b6946;
+    transform: scale(1.02);
+}
+
+.maker-stats .btn-logout {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: 0.2s;
+}
+
+.maker-stats .btn-logout:hover {
+    background: #cc0000;
+    transform: scale(1.02);
+}
+
+.tasks-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #a6977c;
+}
+
+.empty-state .icon {
+    font-size: 4rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #a6977c;
+}
+
+.loading .spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2dccd;
+    border-top: 4px solid #5a4a32;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.task-card {
+    background: #f8f5ed;
+    border: 1px solid #e2dccd;
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: all 0.2s ease;
+}
+
+.task-card:hover {
+    background: #f0ebdf;
+    border-color: #c0b59a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d4c9b2;
+}
+
+.task-number {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2c3a1f;
+}
+
+.task-status {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+}
+
+.task-status.status-shipped {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.task-status.status-preorder {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.task-body {
+    display: grid;
+    gap: 12px;
+}
+
+.task-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    font-size: 0.9rem;
+}
+
+.task-info strong {
+    color: #4a3b28;
+}
+
+.task-items {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    border: 1px solid #ede3d2;
+    font-size: 0.85rem;
+}
+
+.task-items strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #4a3b28;
+}
+
+.task-item {
+    padding: 2px 0;
+    border-bottom: 1px dashed #ede3d2;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-services {
+    background: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    border: 1px solid #ede3d2;
+    font-size: 0.85rem;
+}
+
+.task-services .service-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 3px 0;
+}
+
+.task-services .service-row strong {
+    min-width: 100px;
+}
+
+.task-services .service-status {
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.task-services .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.task-services .service-tag {
+    background: #f0f8f0;
+    border: 1px solid #c8dcc8;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #1f5e1f;
+}
+
+.task-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-complete {
+    background: #2c6e2c;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.btn-complete:hover {
+    background: #1f5e1f;
+    transform: scale(1.02);
+}
+
+.no-items {
+    color: #a6977c;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .maker-panel {
+        padding: 12px;
+        margin: 10px;
+    }
+    .maker-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    .maker-stats {
+        justify-content: center;
+    }
+    .maker-stats .stat {
+        align-items: center;
+    }
+    .task-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== ДАТА И ВРЕМЯ В КАРТОЧКЕ ===== */
+.task-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #e8e0d0;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.task-date .date {
+    font-size: 0.8rem;
+    color: #4a3b28;
+    font-weight: 600;
+}
+
+.task-date .badge-today {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.task-date .badge-archive {
+    font-size: 0.65rem;
+    color: #8a7b64;
+}
